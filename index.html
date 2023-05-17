@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1 {
+  width: 1310px;
+  height: 500px;
+  padding: 10px;
+  border: 5px solid #aaaaaa;
+}
+
+p {
+text-align: center;
+font-size: 30px;
+background: orange;
+box-shadow: 10px 10px 10px solid black;
+</style>
+<script>
+function allowDrop(ev) {
+   ev.preventDefault();
+}
+
+function drag(ev){
+
+   ev.dataTransfer.setData("text",ev.target.id);
+}
+
+function drop(ev) {
+   ev.preventDefault();
+   var data =
+ev.dataTransfer.getData("text");
+
+   ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</hed>
+<body>
+ 
+<p>LIZETH and her friends:</p>
+
+<div id="div1" ondrop="drop(event)"
+ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="patlisa.png"
+draggable="true"
+ondragstart="drag(event)" width="1310" height="500">
+
+</body>
+</html>
+
+
+
